@@ -1,4 +1,8 @@
-const logger = () => {
-  console.log("first");
+const logger = (message) => {
+  console.log(message);
 };
-export { logger };
+
+const sum = (a, b) => {
+  return a + b;
+};
+export default logger;
