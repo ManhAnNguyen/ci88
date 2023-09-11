@@ -1,25 +1,31 @@
-import { useState } from "react";
+import React from "react";
 import "./App.css";
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
-import Content from "./components/Content";
-import Footer from "./components/Footer";
-import Input from "./components/Input";
+import Feed from "./components/Feed";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <div className="app">
-      <Header />
-      <div className="body">
-        <Sidebar />
-        <Content />
-        <Sidebar />
+    <div id="body">
+      <Navbar />
+      <div className="content">
+        <div className="content-left">
+          <Sidebar />
+          <Sidebar />
+        </div>
+        <div className="content-center">
+          <Feed />
+        </div>
+        <div className="content-right">
+          <Sidebar />
+        </div>
       </div>
-      <Footer />
     </div>
   );
-}
+};
 
 export default App;
+
+//babel,swc
+//jsx -> cu phap mo rong js
+//

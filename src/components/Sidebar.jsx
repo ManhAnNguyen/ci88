@@ -1,13 +1,9 @@
-import React from "react";
-import Input from "./Input";
+import React, { createElement } from "react";
 
 const Sidebar = () => {
-  return (
-    <div className="sidebar">
-      Sidebar update 3
-      <Input />
-    </div>
-  );
+  return <div className="sidebar">Sidebar</div>;
+
+  //   return createElement("div", { className: "sidebar" }, "Sidebar");
 };
 
 export default Sidebar;
