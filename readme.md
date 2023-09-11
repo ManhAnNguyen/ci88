@@ -1,27 +1,18 @@
-1//sự khác biệt giữa const, let, var;
+giới thiệu qua reactjs;
+ưu điểm và nhược điểm của reactjs;
 
-                       var.      let.     const.
+khái niệm reactjs :
+component -> chia nhỏ ra -> dễ maintain(bảo trì : update,fix lỗi) và tái sử dụng lại
 
-update giá trị true true false
-re-declare true false false
-hoisting true false false
+//các bước để tạo project :
+b1 : node -v : 18.2.1
+b2 : npm create vite
+b3 : sử dụng arrow chọn react -> chọn javascript + SWC or javascript
+b4 : npm install
+b5 : chạy dự án reactjs : npm run dev
 
-2// arrow function
-3// Template literal
-4// Module
-export import
-export default
-export name
-5//Spread & Rest Operator
+snippet để tạo nhanh 1 components :
+rafce
 
-a,rest : phan con lai
-
-b,spread : copy 1 giá trị -> tại sao cần copy?
-
-b.1 : tại sao cần copy?
-
-data type : string,number,boolean,undefined, null va object <object,function,array>;
-
-nguyên thuỷ(tham trị) va object(tham chiếu)
-
-8/array function
+Virtual DOM :(DOM ảo)
+Real DOM
