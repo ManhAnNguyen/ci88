@@ -1,18 +1,19 @@
-giới thiệu qua reactjs;
-ưu điểm và nhược điểm của reactjs;
+day4 : jsx and props
 
-khái niệm reactjs :
-component -> chia nhỏ ra -> dễ maintain(bảo trì : update,fix lỗi) và tái sử dụng lại
+4.1 : JSX
+jsx : k phải là HTML, cú pháp mở rộng của js giúp cta viết code ngắn gọn hơn(thay thế create element)
 
-//các bước để tạo project :
-b1 : node -v : 18.2.1
-b2 : npm create vite
-b3 : sử dụng arrow chọn react -> chọn javascript + SWC or javascript
-b4 : npm install
-b5 : chạy dự án reactjs : npm run dev
+jsx -> createElement -> object
 
-snippet để tạo nhanh 1 components :
-rafce
+fragment : <></> : bọc các jsx -> 1 parent bản chất jsx là object, 1 function ko thể return 2 object
+hiển thị dynamic content vs jsx, {}
+style trong jsx
 
-Virtual DOM :(DOM ảo)
-Real DOM
+rule of jsx
+1 : k thể return nhiều hơn 1 jsx (bọc vào 1 thằng to)
+2 : class -> classNames
+3 : bắt buộc <H1> (SAI), <h1> (ĐÚNG)
+
+4.2 : PROPS :
+kỹ thuật giúp truyền dữ liệu từ parent -> child;
+props bản chất là object và có thể destructing props

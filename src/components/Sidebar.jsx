@@ -1,12 +1,15 @@
 import React from "react";
 import Input from "./Input";
 
-const Sidebar = () => {
+const Sidebar = ({ background, width = "500px", height = "500px" }) => {
   return (
-    <div className="sidebar">
-      Sidebar update 3
-      <Input />
-    </div>
+    <div
+      style={{
+        background,
+        width,
+        height,
+      }}
+    ></div>
   );
 };
 

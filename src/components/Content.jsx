@@ -1,10 +1,11 @@
 import React from "react";
 import Input from "./Input";
 
-const Content = () => {
+const Content = ({ children, title }) => {
   return (
-    <div className="content">
-      <Input />
+    <div>
+      {title}
+      {children}
     </div>
   );
 };

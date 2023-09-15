@@ -18,13 +18,14 @@
   height: 700px;
 }
 
-.body .sidebar{
-  width: 200px;
+.sidebar{
+  width: 400px;
   background-color: aqua;
-  height: 100%;
+  height: 400px;
+  margin-top: 40px;
 }
 
-.body .content{
+.content{
   background-color: rgb(216, 198, 151);
   color: white;
   flex:1 ;
@@ -51,4 +52,20 @@ input{
   height: 44px;
   width: 220px;
   border: 4px solid red;
+}
+
+.heading{
+  background-color: red;
+  color: white;
+  height: 400px;
+  width: 400px;
+}
+
+.button{
+  border: none;
+
+  padding: 10px 40px;
+  border-radius: 6px;
+  margin: 20px;
+  color: white;
 }

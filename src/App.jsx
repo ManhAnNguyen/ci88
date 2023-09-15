@@ -1,25 +1,19 @@
-import { useState } from "react";
+import React, { createElement } from "react";
 import "./App.css";
-import Header from "./components/Header";
+import Text from "./components/Text";
 import Sidebar from "./components/Sidebar";
+import Button from "./components/Button";
 import Content from "./components/Content";
-import Footer from "./components/Footer";
-import Input from "./components/Input";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <div className="app">
-      <Header />
-      <div className="body">
-        <Sidebar />
-        <Content />
-        <Sidebar />
-      </div>
-      <Footer />
-    </div>
+    <>
+      <Button />
+      <Button />
+    </>
   );
-}
+};
 
 export default App;
+
+//thay đổi width,height,background,color,text
