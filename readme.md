@@ -1,19 +1,30 @@
-day4 : jsx and props
+1 event : truyền như 1 props
 
-4.1 : JSX
-jsx : k phải là HTML, cú pháp mở rộng của js giúp cta viết code ngắn gọn hơn(thay thế create element)
+//SAI
+<button onClick={onClick()}>Click me!</button>
 
-jsx -> createElement -> object
+//ĐÚNG
+<button onClick={onClick}>Click me!</button>
 
-fragment : <></> : bọc các jsx -> 1 parent bản chất jsx là object, 1 function ko thể return 2 object
-hiển thị dynamic content vs jsx, {}
-style trong jsx
+- NẾU TRUYỀN PARAMS
 
-rule of jsx
-1 : k thể return nhiều hơn 1 jsx (bọc vào 1 thằng to)
-2 : class -> classNames
-3 : bắt buộc <H1> (SAI), <h1> (ĐÚNG)
+//SAI
+<button onClick={onClick(MindX)}>Click me!</button>
 
-4.2 : PROPS :
-kỹ thuật giúp truyền dữ liệu từ parent -> child;
-props bản chất là object và có thể destructing props
+//ĐÚNG
+<button onClick={() => onClick(MindX)}>Click me!</button>;
+
+2: state : thay đổi -> làm cho component bị re-render
+
+'render' :
+1 :initial render <render lần đầu tiên> : vảo web, refresh page
+2 :re-render <render lại> : cập nhật giao diện
+
+- state :
+
+  1.  làm cho component re-render ? tại sao cần re-render -> update UI,
+  2.  state độc lập, và chỉ sử dụng dc trong 1 components,
+      3, cách cập nhật state vs object
+
+: khi cập nhật các bạn fai copy object ?
+tại sao cần copy -> state thay đổi -> làm cho component re-render -> UI ms được cập nhật

@@ -1,23 +1,42 @@
-import React, { createElement } from "react";
-import "./App.css";
-import Text from "./components/Text";
-import Sidebar from "./components/Sidebar";
-import Button from "./components/Button";
-import Content from "./components/Content";
-import Input from "./components/Input";
-import Shape from "./components/Shape";
+import React from "react";
+import Count from "./component/Count";
+import Person from "./component/Person";
+import Husband from "./component/Husband";
 
 const App = () => {
   return (
-    <>
-      <Shape />
-      <Shape shape="square" width="400px" />
-      <Shape shape="circle" width="400px" />
-    </>
+    <div>
+      <Count />
+      <Husband />
+    </div>
   );
 };
 
 export default App;
 
-//shape : thay đổi được width,height,background
-// shape  : "square" va 'circle'
+// import React, { useState } from "react";
+
+// const App = () => {
+//   const [countState, setCountState] = useState(0);
+//   let countNormal = 0;
+
+//   const onClickState = () => {
+//     setCountState(100000);
+//   };
+
+//   const onClickNormal = () => {
+//     countNormal = 100000;
+//   };
+
+//   console.log("re-render");
+//   return (
+//     <div>
+//       <h1>countState : {countState}</h1>
+//       <h1>countNormal : {countNormal}</h1>
+//       <button onClick={onClickState}>onClickState!</button>
+//       <button onClick={onClickNormal}>onClickNormal!</button>
+//     </div>
+//   );
+// };
+
+// export default App;
