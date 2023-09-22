@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import A from "./components/A";
 import B from "./components/B";
+import Input from "./components/Input";
+import Button from "./components/Button";
 
 // const name = 'ds'
 // const name = 'ds'
@@ -23,7 +25,7 @@ const App = () => {
 
   return (
     <div>
-      {" "}
+      {/* {" "}
       Max : 20
       <input
         style={{
@@ -33,7 +35,12 @@ const App = () => {
         onChange={(e) => onChangeInput(e)}
       />
       <h1>{value}</h1>
-      <h2>{value.length}</h2>
+      <h2>{value.length}</h2> */}
+      <Input label={"Username"} />
+      <Input label={"Age"} />
+      <Input label={"Address"} />
+      <Input label={"Avatar"} />
+      <Button text={"ADD"}></Button>
     </div>
   );
 };
