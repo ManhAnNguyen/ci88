@@ -2,13 +2,38 @@ import React, { useState } from "react";
 import A from "./components/A";
 import B from "./components/B";
 
+// const name = 'ds'
+// const name = 'ds'
+//scope
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [value, setValue] = useState("");
+  const [error, setError] = useState(false);
+
+  const onChangeInput = (e) => {
+    const valueInput = e.target.value;
+    if (valueInput.length > 20) {
+      setError(true);
+      alert("Maxium 20");
+      return;
+    }
+    setValue(valueInput);
+  };
+
+  // console.log(error);
 
   return (
     <div>
-      <A count={count} setCount={setCount} />
-      <B count={count} />
+      {" "}
+      Max : 20
+      <input
+        style={{
+          background: error ? "red" : "white",
+        }}
+        value={value}
+        onChange={(e) => onChangeInput(e)}
+      />
+      <h1>{value}</h1>
+      <h2>{value.length}</h2>
     </div>
   );
 };
