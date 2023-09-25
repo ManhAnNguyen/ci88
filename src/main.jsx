@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from "./App.jsx";
-import ConditionalRendering from "./ConditionalRendering.jsx";
+import App from "./App.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ConditionalRendering />
+    <App />
   </React.StrictMode>
 );
