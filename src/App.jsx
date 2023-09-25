@@ -1,133 +1,59 @@
 import React, { useState } from "react";
-import A from "./components/A";
-import B from "./components/B";
-import Input from "./components/Input";
-import Button from "./components/Button";
+import "./App.css";
 
-// const name = 'ds'
-// const name = 'ds'
-//scope
+import Todo from "./components/Todo";
+//data types : array;
+
+const initialVal = {
+  value: "",
+  error: false,
+};
+
 const App = () => {
-  const [value, setValue] = useState("");
-  const [error, setError] = useState(false);
+  const [val, setVal] = useState(initialVal);
 
-  const onChangeInput = (e) => {
-    const valueInput = e.target.value;
-    if (valueInput.length > 20) {
-      setError(true);
-      alert("Maxium 20");
+  const { value, error } = val;
+  const [todos, setTodos] = useState([]);
+
+  const onButtonClick = () => {
+    if (!value) {
+      setVal({ ...val, error: true });
       return;
     }
-    setValue(valueInput);
-  };
 
-  // console.log(error);
+    const newTodo = {
+      name: value,
+      created_at: new Date().toLocaleString(),
+      isCompleted: false,
+      id: todos.length + 1,
+    };
+
+    //spread orepator
+    setTodos([...todos, newTodo]);
+    //reset input
+    setVal(initialVal);
+  };
 
   return (
     <div>
-      {/* {" "}
-      Max : 20
-      <input
-        style={{
-          background: error ? "red" : "white",
-        }}
-        value={value}
-        onChange={(e) => onChangeInput(e)}
-      />
-      <h1>{value}</h1>
-      <h2>{value.length}</h2> */}
-      <Input label={"Username"} />
-      <Input label={"Age"} />
-      <Input label={"Address"} />
-      <Input label={"Avatar"} />
-      <Button text={"ADD"}></Button>
+      <h1>Todolist</h1>
+      <div className="input-container">
+        <input
+          placeholder="Enter your task"
+          value={value}
+          onChange={(e) => setVal({ value: e.target.value, error: false })}
+        />
+        <button onClick={onButtonClick}>Add</button>
+      </div>
+      <p className="error">{error ? "Enter your task" : ""}</p>
+
+      <div className="todo-container">
+        {todos.map((item, index) => (
+          <Todo key={item.id} item={item} index={index} />
+        ))}
+      </div>
     </div>
   );
 };
 
 export default App;
-//lifting state up
-
-// import React, { useState } from "react";
-// import "./App.css";
-// import Input from "./components/Input";
-// import Button from "./components/Button";
-
-// const initialValue = {
-//   username: "",
-//   password: "",
-//   confirm: "",
-//   co3Bich: false,
-// };
-
-// const App = () => {
-//   const [infoUser, setInfoUser] = useState(initialValue);
-
-//   //handle input
-//   const onHandleChange = (key, event) => {
-//     const value = event.target.value;
-
-//     setInfoUser({ ...infoUser, [key]: value });
-//   };
-
-//   //detructring object
-//   const { username, password, confirm, co3Bich } = infoUser;
-
-//   //reset input
-//   function onReset() {
-//     setInfoUser(initialValue);
-//   }
-
-//   //handle register
-//   const onClick = () => {
-//     if (!username || !password || !confirm) {
-//       alert("username,password,confirm password are required");
-//       return;
-//     }
-//     if (password !== confirm) {
-//       alert("check password");
-//       return;
-//     }
-
-//     alert("success");
-
-//     console.log(infoUser);
-//     onReset();
-//   };
-
-//   return (
-//     <div className="container">
-//       <Input
-//         label="Username"
-//         value={username}
-//         onChange={(e) => onHandleChange("username", e)}
-//       />
-//       <Input
-//         label="Password"
-//         value={password}
-//         onChange={(e) => onHandleChange("password", e)}
-//         type="password"
-//       />
-//       <Input
-//         label="Confirm password"
-//         value={confirm}
-//         onChange={(e) => onHandleChange("confirm", e)}
-//         type="password"
-//       />
-//       <div className="bich">
-//         <span>có 3 bích</span>
-//         <input
-//           type="checkbox"
-//           checked={co3Bich}
-//           onChange={() => setInfoUser({ ...infoUser, co3Bich: !co3Bich })}
-//         />
-//       </div>
-//       <Button text={"Register"} backgroundColor="green" onClick={onClick} />{" "}
-//       <Button text={"Reset"} backgroundColor="red" onClick={onReset} />
-//     </div>
-//   );
-// };
-
-// export default App;
-// //value
-// //onChange

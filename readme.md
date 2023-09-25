@@ -1,30 +1,28 @@
-1 event : truyền như 1 props
+day 7: list and conditional rendering
 
-//SAI
-<button onClick={onClick()}>Click me!</button>
+7a : list
 
-//ĐÚNG
-<button onClick={onClick}>Click me!</button>
+7a.1 : nhắc lại 1 chút 1 vài method của array
 
-- NẾU TRUYỀN PARAMS
+- filter : trả ra 1 mảng mới, và các phần tử trong mảng fai thỏa mãn điều kiện nào đỡ
+  VD:
+  const nums = [1, 2, 3, 4, 5, 6, 7, 8];
 
-//SAI
-<button onClick={onClick(MindX)}>Click me!</button>
+const filteredNum = nums.filter((item, index) => item > 4);
 
-//ĐÚNG
-<button onClick={() => onClick(MindX)}>Click me!</button>;
+console.log(filteredNum);
 
-2: state : thay đổi -> làm cho component bị re-render
+- map : trả ra 1 mảng mới,các phẩn tử thay đổi dựa trên điều kiện
+  VD:
+  const nums = [1, 2, 3, 4, 5, 6, 7, 8];
 
-'render' :
-1 :initial render <render lần đầu tiên> : vảo web, refresh page
-2 :re-render <render lại> : cập nhật giao diện
+const newNums = nums.map((item, index) => item \* 2);
 
-- state :
+console.log(newNums)
 
-  1.  làm cho component re-render ? tại sao cần re-render -> update UI,
-  2.  state độc lập, và chỉ sử dụng dc trong 1 components,
-      3, cách cập nhật state vs object
+- đi sâu vào key 1 chút? tại sao cần:
 
-: khi cập nhật các bạn fai copy object ?
-tại sao cần copy -> state thay đổi -> làm cho component re-render -> UI ms được cập nhật
+* để react phân biệt các item vs nhau
+* nếu k có key: sort -> thì react kb
+
+7b conditional : <điều kiện> rendering <rendering> -> rendering theo điều kiện

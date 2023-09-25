@@ -1,9 +1,13 @@
 import React from "react";
 
-const B = ({ count }) => {
+const B = () => {
   return (
-    <div>
-      B<button onClick={() => alert(count)}>SHOW ALERT</button>
+    <div
+      style={{
+        background: "blue",
+      }}
+    >
+      B
     </div>
   );
 };

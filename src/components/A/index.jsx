@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const A = ({ count, setCount }) => {
+const A = () => {
   return (
-    <div>
-      A{count}
-      <button onClick={() => setCount(count + 1)}>Click</button>
+    <div
+      style={{
+        background: "red",
+      }}
+    >
+      A
     </div>
   );
 };
