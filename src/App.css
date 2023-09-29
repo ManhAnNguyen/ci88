@@ -49,17 +49,6 @@ body{
 
 }
 
-.lights .light::before{
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  background: white;
-  opacity: 0.5;
-}
 
 .lights::before{
   content: '';
@@ -72,17 +61,6 @@ body{
   border-radius: 0px 0px 10px 10px;
 }
 
-.red{
-  background-color: red;
 
-}
-.yellow{
-  background-color: yellow;
-
-}
-.green{
-  background-color: green;
-
-}
 
 
