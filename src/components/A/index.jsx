@@ -1,36 +1,7 @@
-import React, { useEffect, useState } from "react";
-
-//life circle
-
-//mount
-//componentDidmount
-
-//updation
-//componentDidupdate
-
-//unmount
-//componentwillUnmount
+import React from "react";
 
 const A = () => {
-  const [value, setInput] = useState("");
-
-  useEffect(() => {
-    console.log("component running");
-
-    return () => console.log("componentwillUnmount");
-  }, [value]);
-
-  return (
-    <div
-      style={{
-        background: "red",
-      }}
-      className="a"
-    >
-      A
-      <input value={value} onChange={(e) => setInput(e.target.value)} />
-    </div>
-  );
+  return <div>A</div>;
 };
 
 export default A;
