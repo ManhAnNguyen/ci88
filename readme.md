@@ -1,28 +1,42 @@
-day 7: list and conditional rendering
+day8 : side effect with useEffect
 
-7a : list
+8.1 side effect là gi?:
 
-7a.1 : nhắc lại 1 chút 1 vài method của array
+- logic thực thi ngoài phạm vi của component
+  vd :
 
-- filter : trả ra 1 mảng mới, và các phần tử trong mảng fai thỏa mãn điều kiện nào đỡ
-  VD:
-  const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+  - chưa có account -> redirect -> login
+  - xử lí http <>
+  - xử lí timer (setTimeOut : delay sau 1 khoảng tgian, setInterval : thực thi sau mỗi lần)
+  - xử lí những event
 
-const filteredNum = nums.filter((item, index) => item > 4);
+- cách dùng useEffect
+  useEffect(a,b) : nhận vào 2 tham số
 
-console.log(filteredNum);
+  - tham số a : callback -> là 1 function,function này là tham số của hàm khác
+  - tham số b (optional) : array dependencies
 
-- map : trả ra 1 mảng mới,các phẩn tử thay đổi dựa trên điều kiện
-  VD:
-  const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+- mount và unmounts?
+  mount : insert vao DOM
+  unmount : remove khoi DOM
 
-const newNums = nums.map((item, index) => item \* 2);
+- cleanUp function? -> function dọn dẹp
 
-console.log(newNums)
+  - dọn dẹp cái gỉ : dọn dẹp các event mà đang lắng nghe, hoặc các tác vụ bất đồng bộ
+  - tại sao cần dọn dẹp? : tránh memory leak
 
-- đi sâu vào key 1 chút? tại sao cần:
+- ví dụ useEffect <scroll>
 
-* để react phân biệt các item vs nhau
-* nếu k có key: sort -> thì react kb
+  - trong component A, cần viết đoạn logic để bắt 1 event scroll
 
-7b conditional : <điều kiện> rendering <rendering> -> rendering theo điều kiện
+- life circle <vòng đời>
+  - mèo : sinh ra -> phát triển -> chết đi
+  - con người : sinh ra -> phát triển -> chết đi
+  - vòng đời component : mount -> updation (re-render) -> unmount
+
+2 cách viết component
+
+- class : class component : life circle
+- function : functional component : k có life circle : useEffect
+
+- hook; 16.8 mới có hook (useState,useEffect)
