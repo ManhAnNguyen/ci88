@@ -1,42 +1,37 @@
-day8 : side effect with useEffect
+day9 : context;
 
-8.1 side effect là gi?:
+1 : vấn đề state ?
 
-- logic thực thi ngoài phạm vi của component
-  vd :
+- truyền props qua quá nhiều components
+- props truyền qua grandParent,-> parent -> child
 
-  - chưa có account -> redirect -> login
-  - xử lí http <>
-  - xử lí timer (setTimeOut : delay sau 1 khoảng tgian, setInterval : thực thi sau mỗi lần)
-  - xử lí những event
+2 : context là gì ?
 
-- cách dùng useEffect
-  useEffect(a,b) : nhận vào 2 tham số
+- sẽ giải quyết vấn đề (1)
+- global state : warehouse ,component nào cần vào lấy
 
-  - tham số a : callback -> là 1 function,function này là tham số của hàm khác
-  - tham số b (optional) : array dependencies
+3 : cách dùng
 
-- mount và unmounts?
-  mount : insert vao DOM
-  unmount : remove khoi DOM
+- <>
+  <ComponentA />
 
-- cleanUp function? -> function dọn dẹp
+  <AppContext.Provider>
+  <div>
+  App
+  <GrandParent />
+  </div>
+  </AppContext.Provider>
+  </>
 
-  - dọn dẹp cái gỉ : dọn dẹp các event mà đang lắng nghe, hoặc các tác vụ bất đồng bộ
-  - tại sao cần dọn dẹp? : tránh memory leak
+  ComponentA không sử dụng context
 
-- ví dụ useEffect <scroll>
+- tạo context : createContext
+- dùng context : useContext
 
-  - trong component A, cần viết đoạn logic để bắt 1 event scroll
+4 : ví dụ
 
-- life circle <vòng đời>
-  - mèo : sinh ra -> phát triển -> chết đi
-  - con người : sinh ra -> phát triển -> chết đi
-  - vòng đời component : mount -> updation (re-render) -> unmount
+web -> theme : 'dark" | light
 
-2 cách viết component
+5 : lời khuyên :
 
-- class : class component : life circle
-- function : functional component : k có life circle : useEffect
-
-- hook; 16.8 mới có hook (useState,useEffect)
+- k quá lạm dụng

@@ -1,56 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import "./App.css";
-import { Button, Input, InputNumber } from "antd";
-import { NumericFormat } from "react-number-format";
+import Header from "./components/Header";
+import Body from "./components/Body";
+
+export const ThemeContext = createContext(null);
 
 const App = () => {
-  const [start, setStart] = useState(false);
-  const [value, setValue] = useState("");
+  const [theme, setTheme] = useState("light");
 
-  const [ani, setAni] = useState(false);
+  const onChangeTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+  };
 
-  useEffect(() => {
-    //check if end
-    if (value === 0) {
-      alert("Ended");
-      return;
-    }
-
-    //check initalize
-    if (!start || value === "") return;
-    const timer = setInterval(() => {
-      setValue(value - 1);
-      setAni((prev) => !prev);
-    }, 1000);
-
-    //clean up function
-    return () => clearInterval(timer);
-  }, [start, value]);
-
+  // useEffect(() => {
+  //   document.body.classList.add(theme)
+  // },[theme])
   return (
-    <div>
-      <NumericFormat
-        value={value}
-        customInput={Input}
-        onChange={(e) => setValue(e.target.value)}
-        style={{
-          width: "300px",
-        }}
-      />
-      <Button
-        type="primary"
-        size="middle"
-        onClick={() => setStart(true)}
-        style={{
-          marginLeft: "10px",
-        }}
-      >
-        click
-      </Button>
-      <h1 id="count" className={`${ani && "ani"}`}>
-        {value}
-      </h1>
-    </div>
+    <ThemeContext.Provider
+      value={{
+        theme,
+        onChangeTheme,
+      }}
+    >
+      <div className={`container ${theme}`}>
+        <Header />
+        <Body />
+      </div>
+    </ThemeContext.Provider>
   );
 };
 
