@@ -1,33 +1,32 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 import "./App.css";
-import Header from "./components/Header";
-import Body from "./components/Body";
+import Form from "./components/Form";
+import Todo from "./components/Todo";
+//crud
 
-export const ThemeContext = createContext(null);
+export const TododContext = createContext(null);
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
+  const [todos, setTodos] = useState([]);
 
-  const onChangeTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
+  const handleAddTodo = (newTodo) => {
+    setTodos([...todos, newTodo]);
   };
 
-  // useEffect(() => {
-  //   document.body.classList.add(theme)
-  // },[theme])
+  console.log(todos);
   return (
-    <ThemeContext.Provider
+    <TododContext.Provider
       value={{
-        theme,
-        onChangeTheme,
+        todos,
+        handleAddTodo,
       }}
     >
-      <div className={`container ${theme}`}>
-        <Header />
-        <Body />
+      <div className="container">
+        <h1>TODOLIST</h1>
+        <Form />
+        <Todo />
       </div>
-    </ThemeContext.Provider>
+    </TododContext.Provider>
   );
 };
 
