@@ -1,37 +1,16 @@
-day9 : context;
+lesson 10 : routing <react-router-dom>
 
-1 : vấn đề state ?
+1. Vấn đề ?
 
-- truyền props qua quá nhiều components
-- props truyền qua grandParent,-> parent -> child
+- thông thường : navigate giữa các page -> reload lại toàn bộ (background : '')
+- routing trong react : k bị reload -> tốc độ phản hồi rất là nhanh
 
-2 : context là gì ?
+2. Thực hiện : react-router-dom
 
-- sẽ giải quyết vấn đề (1)
-- global state : warehouse ,component nào cần vào lấy
+b1 : install lib
+b2 : set up
+b3 :
 
-3 : cách dùng
-
-- <>
-  <ComponentA />
-
-  <AppContext.Provider>
-  <div>
-  App
-  <GrandParent />
-  </div>
-  </AppContext.Provider>
-  </>
-
-  ComponentA không sử dụng context
-
-- tạo context : createContext
-- dùng context : useContext
-
-4 : ví dụ
-
-web -> theme : 'dark" | light
-
-5 : lời khuyên :
-
-- k quá lạm dụng
+/ -> Home
+/about -> About
+/products -> Products
