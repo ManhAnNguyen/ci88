@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TododContext } from "../../App";
 
 const Progress = () => {
+  const { todos } = useContext(TododContext);
+
+  const totalTodo = todos.length;
+  const itemChecked = todos.filter((todo) => todo.isCompleted).length;
+
+  if (totalTodo === 0) return <></>;
+
+  console.log(itemChecked / totalTodo);
+
   return (
     <div className="progress">
-      <span className="layer-progress"></span>
+      <span
+        className="layer-progress"
+        style={{
+          width: `${(itemChecked / totalTodo) * 100}%`,
+        }}
+      ></span>
       <div className="progress-content">
         <p className="text">
-          <span className="bold">1</span> of
-          <span className="bold">2</span> tasks done
+          <span className="bold">{itemChecked}</span> of
+          <span className="bold">{totalTodo}</span> tasks done
         </p>
       </div>
     </div>

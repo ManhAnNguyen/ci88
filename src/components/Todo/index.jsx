@@ -9,8 +9,8 @@ const Todo = () => {
   const { todos } = useContext(TododContext);
   return (
     <div className="todo-container">
-      {todos.map((item) => (
-        <Item key={item.id} item={item} />
+      {todos.map((item, index) => (
+        <Item key={item.id} item={item} index={index} />
       ))}
       <div className="todo-bottom">
         <Progress />
