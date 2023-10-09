@@ -1,32 +1,16 @@
-import React, { createContext, useState } from "react";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
 import "./App.css";
-import Form from "./components/Form";
-import Todo from "./components/Todo";
-//crud
-
-export const TododContext = createContext(null);
-
 const App = () => {
-  const [todos, setTodos] = useState([]);
-
-  const handleAddTodo = (newTodo) => {
-    setTodos([...todos, newTodo]);
-  };
-
-  console.log(todos);
   return (
-    <TododContext.Provider
-      value={{
-        todos,
-        handleAddTodo,
-      }}
-    >
-      <div className="container">
-        <h1>TODOLIST</h1>
-        <Form />
-        <Todo />
-      </div>
-    </TododContext.Provider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/product" element={<Products />} />
+        <Route path="/product/:productId" element={<ProductDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
