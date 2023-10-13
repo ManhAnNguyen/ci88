@@ -1,6 +1,7 @@
 import { Button } from "antd";
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Product = ({ item }) => {
   const {
@@ -22,9 +23,9 @@ const Product = ({ item }) => {
       </div>
       <div className="item-bottom">
         <p className="price">${price}</p>
-        <Button type="link" href={`/product/${item.id}`}>
+        <Link className="view-details" to={`/product/${item.id}`}>
           View details
-        </Button>
+        </Link>
       </div>
     </div>
   );

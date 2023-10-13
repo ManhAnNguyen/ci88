@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Product from "../components/Product";
+import { BeatLoader } from "react-spinners";
 
 const Products = () => {
   const [products, setProducts] = useState({
@@ -19,6 +20,14 @@ const Products = () => {
   }, []);
 
   const { data, isLoading } = products;
+
+  if (isLoading) {
+    return (
+      <div className="loading">
+        <BeatLoader color="black" />
+      </div>
+    );
+  }
 
   return (
     <div className="product-list">

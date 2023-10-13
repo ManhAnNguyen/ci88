@@ -15,7 +15,20 @@ body{
 
 }
 
+.view-details{
+  text-decoration: none;
+  color: white;
+  padding: 10px 10px;
+  background-color: brown;
+  border-radius: 5px;
+}
 
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 .product-list{
   display: grid;
   grid-template-columns: repeat(5,1fr);
