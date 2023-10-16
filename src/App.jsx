@@ -1,23 +1,28 @@
-import React, { createContext } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Products from "./pages/Products";
-import ProductDetail from "./pages/ProductDetail";
+import React from "react";
 import "./App.css";
-import products from "./data/products.json";
-
-export const ProductContext = createContext(null);
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 const App = () => {
   return (
-    <ProductContext.Provider value={{ products }}>
-      {" "}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/product" element={<Products />} />
-          <Route path="/product/:productId" element={<ProductDetail />} />
-        </Routes>
-      </BrowserRouter>
-    </ProductContext.Provider>
+    <BrowserRouter>
+      <div className="links">
+        <Link to={"/"}>Home</Link>
+        <Link
+          to={"/about"}
+          style={{
+            marginLeft: "20px",
+          }}
+        >
+          About
+        </Link>
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

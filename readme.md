@@ -1,17 +1,16 @@
-lesson 11 : http
+lesson 13 : custom hook
 
-cach thuc hoat dong cua trang web
+useState, useEffect,useCallback,useMemo,useContext,useRef
+others : useReducer,useLocalStorage,..
 
-dki account : fb,tiktok -> lm sao luu giu thong tin cua mk ?
+customhook :
 
-database : sql va nosql
+- giúp cta tao ra các hook theo ý của mình
+- share logic
 
-password : nhap tren 8 ky tu
+- lời khuyên về hooks:
 
-GET,PUT,POST,DELETE,OPTIONS,PATCH
+* 1 : các hook bắt buộc fai bắt đầu bằng 'use' : ok
+* 2 : hook fai dùng ở phạm vi component
 
-2xx : thanh cong
-4xx : client
-5xx : server
-
-bat dong bo : Promise, callback, async await
+- VD
