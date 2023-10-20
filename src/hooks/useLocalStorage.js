@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
-function useLocalStorage(value) {
+function useLocalStorage(key, value) {
   useEffect(() => {
     if (value !== null && value !== undefined) {
-      localStorage.setItem("count", JSON.stringify(value));
+      localStorage.setItem(key, JSON.stringify(value));
     }
   }, [value]);
 }
