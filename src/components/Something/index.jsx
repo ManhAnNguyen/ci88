@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { ThemeContext } from "../../App";
 
 class Something extends Component {
   state = {
