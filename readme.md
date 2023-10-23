@@ -1,16 +1,16 @@
-lesson 13 : custom hook
+lesson 14 : class component
 
-useState, useEffect,useCallback,useMemo,useContext,useRef
-others : useReducer,useLocalStorage,..
+- 2 kiểu tạo ra component :
 
-customhook :
+  - 1 : Functional component : -> dùng function -> tạo component ( thông dụng hiện nay) : quan trọng
+  - 2 : Class component : -> class -> tạo component (ngày xưa được dùng, bây giờ thì không) : đi qua , k đi sâu;
 
-- giúp cta tao ra các hook theo ý của mình
-- share logic
+- giới thiệu qua về class
 
-- lời khuyên về hooks:
+- OOP : lập trình hướng đối tượng.
+- mục đích OOP : giống bản vẽ để tạo ra các object
 
-* 1 : các hook bắt buộc fai bắt đầu bằng 'use' : ok
-* 2 : hook fai dùng ở phạm vi component
+- Function contructor -> OOP Js
+- Class -> OOP
 
-- VD
+- tính chất OOP : đóng gói, kế thừa, đa hình, trừu tượng
